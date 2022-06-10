@@ -1,5 +1,18 @@
 name: Veracode Static Analysis Demo
-on: workflow_dispatch
+#on: workflow_dispatch
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ main ]
+  #schedule:
+    #- cron: '29 22 * * 4'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions:
+  contents: read
     
 jobs:
   static_analysis:
