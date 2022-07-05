@@ -20,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Publish actor name
+        run: echo ${{ github.actor }}
+    
       - name: Check out main branch
         uses: actions/checkout@v2
         
