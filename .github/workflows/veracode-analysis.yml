@@ -35,8 +35,8 @@ jobs:
       - name: Veracode Upload And Scan
         uses: veracode/veracode-uploadandscan-action@0.2.1
         with:
-          appname: 'VeraDemoNew'
-          createprofile: true
+          appname: 'VeraDemo'
+          createprofile: false
           filepath: 'app/target/verademo.war'
           version: '${{ env.ACTOR }}'
           vid: '${{ secrets.AA_VERACODE_API_ID }}'
