@@ -1,4 +1,4 @@
-name: Veracode Static Analysis Demo
+name: Veracode Static Analysis Demo github.actor
 #on: workflow_dispatch
 
 on:
@@ -40,3 +40,5 @@ jobs:
           exclude: '*.js'
           include: '*.war'
           criticality: 'VeryHigh'
+          
+
