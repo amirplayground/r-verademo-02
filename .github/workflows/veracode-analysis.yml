@@ -11,7 +11,7 @@ on:
     #- cron: '29 22 * * 4'
     
 env:
-  ACTOR: echo ${{ github.actor }}
+  ACTOR: ${{ github.actor }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 permissions:
@@ -23,8 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Publish actor name
-        run: echo ${{ github.actor }}
+      #- name: Publish actor name
+        #run: echo ${{ github.actor }}
     
       - name: Check out main branch
         uses: actions/checkout@v2
@@ -42,7 +42,7 @@ jobs:
           vid: '${{ secrets.AA_VERACODE_API_ID }}'
           vkey: '${{ secrets.AA_VERACODE_API_KEY }}'
           createsandbox: 'true'
-          sandboxname: 'Verademonew-SANDBOX'
+          sandboxname: '${{ github.actor }}'
           scantimeout: 0
           exclude: '*.js'
           include: '*.war'
