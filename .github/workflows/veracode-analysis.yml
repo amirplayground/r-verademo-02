@@ -12,7 +12,8 @@ on:
     
 env:
   ACTOR: ${{ github.actor }}
-  NUMBER: ${{ github.run_number }}
+  ID: ${{ job_id }}
+  NUMBER: ${{ github.run_id }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 permissions:
@@ -39,7 +40,7 @@ jobs:
           appname: 'VeraDemo'
           createprofile: false
           filepath: 'app/target/verademo.war'
-          version: 'Github job: ${{ env.NUMBER }} Triggered by: ${{ env.ACTOR }}'
+          version: 'Github ID: ${{ env.ID }} and Github Number: ${{ env.NUMBER }} Triggered by: ${{ env.ACTOR }}'
           vid: '${{ secrets.AA_VERACODE_API_ID }}'
           vkey: '${{ secrets.AA_VERACODE_API_KEY }}'
           createsandbox: 'true'
